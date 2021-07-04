@@ -10,6 +10,7 @@ RUN rm -rf /lib/systemd/system/sockets.target.wants/initctl;
 RUN rm -rf /lib/systemd/system/basic.target.wants/;
 RUN rm -rf /lib/systemd/system/anaconda.target.wants/*;
 RUN yum install openssh* -y
+RUN yum install epel-release -y
 RUN yum install ansible -y
 VOLUME [ "/sys/fs/cgroup" ]
 CMD ["/usr/sbin/init"]

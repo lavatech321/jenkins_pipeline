@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  tasks:
+    - yum:
+        name: httpd
+        state: present
+    - copy:
+        src: index.html
+        dest: /var/www/html
+    - service:
+        name: httpd
+        state: started
+...
